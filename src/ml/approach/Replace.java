@@ -11,25 +11,21 @@ public class Replace extends ClinicalDecisionObject {
 
 	int count = 1;
 
-	public void performTest(String algorithm) throws Exception {
+	public void performTest() throws Exception {
 
 		// Train dataset 1 using cross validation
-		trainAndTest(algorithm, train1);
+		trainAndTest(train1);
 
 		// Train dataset 2 using cross validation
-		trainAndTest(algorithm, train2);
+		trainAndTest(train2);
 
 	}
 
-	private void trainAndTest(String algorithm, Instances data) throws Exception {
-		Classifier classifier = ClassifierFactory.getClassifier(algorithm);
-		if (classifier == null) {
-			System.out.println("No Classifier found! Exiting...");
-		}
+	private void trainAndTest(Instances data) throws Exception {
 
 		Evaluation eval1 = new Evaluation(data);
 		// The crossValidateModel takes care of training and evaluating the classifier.
-		eval1.crossValidateModel(classifier, data, 10, new Random(10));
+		eval1.crossValidateModel(this.classifier, data, 10, new Random(10));
 
 		System.out.println(eval1.toSummaryString("============ Scenario #" + count++ + "============\n", false));
 		System.gc();
