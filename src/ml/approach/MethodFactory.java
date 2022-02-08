@@ -10,7 +10,7 @@ import weka.classifiers.rules.JRip;
 import weka.classifiers.trees.J48;
 
 public class MethodFactory {
-	public static ClinicalDecisionObject getMethod(int method) {
+	public static ClinicalDecisionObject getMethod(String method) {
 		switch (method) {
 		case CDSSConstants.METHOD_REPLACE:
 			return new Replace();

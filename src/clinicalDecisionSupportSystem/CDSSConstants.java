@@ -13,7 +13,7 @@ public final class CDSSConstants {
 	public static final String ML_ALGORITHM_TREE_BASED = "Tree based";
 	public static final String ML_ALGORITHM_MULTI_LAYER_PERCEPTRON = "Multi layer perceptron";
 	
-	public static final int METHOD_REPLACE = 1;
-	public static final int METHOD_ENSEMBLE = 2;
-	public static final int METHOD_INCREMENTAL = 3;
+	public static final String METHOD_REPLACE = "Replace";
+	public static final String METHOD_ENSEMBLE = "Ensemble";
+	public static final String METHOD_INCREMENTAL = "Incremental";
 }
